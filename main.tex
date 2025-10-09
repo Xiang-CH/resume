@@ -1,0 +1,234 @@
+%-------------------------
+% Resume in Latex
+% Author : Chen Xiang
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setCJKmainfont{STHeiti} 
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xstring}
+\usepackage{ifthen}
+\usepackage{fontawesome5}
+\usepackage[normalem]{ulem} % For customizable underlines
+% \input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+\usepackage[sfdefault]{carlito}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+% Phone number display control (default: true)
+\providecommand{\showphone}{true}
+\providecommand{\phonenumber}{0000-0000}
+
+%-------------------------
+% Custom commands
+
+% Custom thin underline command
+\newcommand{\thinunderline}[1]{\uline{#1}}
+% Adjust underline thickness (0.4pt is thinner than default)
+\renewcommand{\ULthickness}{0.2pt}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Chen Xiang } \textbf{\huge \scshape 陳想}\\ \vspace{3pt}
+    \small
+    \ifthenelse{\equal{\showphone}{true}}{\raisebox{-1pt}{\faPhone} \space \phonenumber \space $|$}{}
+    \raisebox{-1pt}{\faEnvelope} \space \href{mailto:xiiang.ch@gmail.com}{\thinunderline{xiiang.ch@gmail.com}} $|$
+    \raisebox{-1pt}{\faGlobe} \space \href{https://cxiang.site}{\thinunderline{cxiang.site}} $|$
+    \raisebox{-1pt}{\faGithub} \space \href{https://github.com/Xiang-CH}{\thinunderline{github.com/Xiang-CH}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\href{https://hku.hk/}{The University of Hong Kong}}{Hong Kong}
+      {Master of Science in Computer Science}{Sep. 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Relevant Coursework: Quantum Computing, Data Mining, Algorithmic Trading, Unmmaned Systems}
+      \resumeItemListEnd
+      \vspace{-5pt}
+      \resumeSubSubheading
+      {Bachelor of Engineering in Computer Science}{Sep. 2021 -- June 2025}
+      \resumeItemListStart
+        \resumeItem{First Class Honours, Dean's Honours List (2021-2022)}
+        \resumeItem{Relevant Coursework: Machine Learning, Computer Vision, Operating Systems, Object-Oriented Programming, Data Science, Software Engineering, Algorithm Design, Databases, Network Communications, Natural Language Processing, Deep Learning}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {\href{https://www.linkedin.com/school/universityofhongkong}{The University of Hong Kong}}{Hong Kong}
+      {Research Assistant II}{Jun 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Development of Legal AI tools for teaching and learning purposes with the Law and Technology Centre at HKU}
+        \resumeItem{Processed raw documents and built a relational semantic database for Hong Kong legal documents including articles, legislations, and judgments to facilitate efficient information retrieval for Retrieval Augmented Large Language Models in legal applications.}
+      \resumeItemListEnd
+      
+   \resumeSubSubheading
+    {Student Research Assistant}{Jun 2023 -- May 2024, Sep 2024 -- May 2025}
+    \resumeItemListStart
+       \resumeItem{Designed and tought multiple hands-on workshops on AI projects at the Innovation Wing at HKU. Including creating \href{https://github.com/Xiang-CH/Innochat-Template}{\thinunderline{custom chatbots}} with Azure services, and building multi-modal Retrieval Augmented Generation (RAG) applications, etc.}
+        \resumeItem{Worked on multiple student lead AI projects, including \href{https://clic-search.vercel.app/}{\thinunderline{CLIC-Search}}: a semantic search engine for the Community Legal Information Center; \href{https://aiha.vercel.app/}{{\thinunderline{AI Historian Assistant}}}: a multi-modal history research assistant; etc.}
+    \resumeItemListEnd
+
+
+    \resumeSubheading
+      {\href{https://www.linkedin.com/company/iflytekcoltd.}{iFLYTEK Co., Ltd.}}{Shenzhen}
+      {Assistant Software Development Engineer}{June 2024 -- Aug 2024}
+      \resumeItemListStart
+        \resumeItem{Involved in the development of AI English speaking tutor and AI picture book companion Large Language Model (LLM) solution in the education product line.}
+        \resumeItem{Developed and maintained the application pipelines using \emph{Node-RED} for custom needs based on requirements.}
+        \resumeItem{Automated data engineering procedures for model fine-tuning using \emph{Python} scripts and optimized the prompt tuning process using tools such as \emph{promptfoo}.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://hk-legal-ai.vercel.app/search}{\thinunderline{CLIC-Chats}}} $|$ \emph{Next.js, Prisma, MS-SQL, Azure, LLM, RAG}}{Jul 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Developed a full-stack web application using with Next.js and Prisma to build a chatbot for Hong Kong legal document Q\&A.}
+            \resumeItem{Processed raw legislations/judgments/articles and built a relational database for Hong Kong legal by parsing and cleaning various data sources in different formats. }
+            \resumeItem{Built a search index (vector + keyword) on \emph{Azure AI Search} by semantically chunking and embedding the documents.}
+            \resumeItem{Implemented a Retrieval Augmented Generation (RAG) pipeline featuring hybrid retrieval, relationship extraction, and reranking to retrieve relevant documents and generate accurate responses using Large Language Models (LLMs)}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{\href{https://cucampus.one/}{\thinunderline{CU-Campus}}} $|$ \emph{React, React Router, Tailwind CSS, Vite, i18n}}{May 2024 -- Oct 2024}
+          \resumeItemListStart
+            \resumeItem{CU Campus is a course review and calendar scheduling platform for CUHK students. It also integrates other campus feature aiming to be the one-stop campus information site for CUHK students.}
+            \resumeItem{Involved in planning, design, development and iterations of the platform.}
+            \resumeItem{Frontend development using \emph{React} and \emph{Tailwind CSS}, with tri-lingual support using \emph{i18n}.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {See more at: \href{https://cxiang.site/project}{\textbf{\thinunderline{cxiang.site/project}}}}{}
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: TypeScript, JavaScript, Python, SQL, HTML/CSS} \\
+     \textbf{Frameworks}{: React, Node.js, Next.js, Flask, FastAPI, Tailwind CSS, Prisma, MongoDB, Vue.js, Chrome Extensions} \\
+     \textbf{Developer Tools}{: Git, Docker, Linux, Azure, Postman, OpenAI API, Vercel, Clerk} \\
+     \textbf{Libraries}{: Pandas, NumPy, Matplotlib, PyTorch, Scikit-learn, LangChain, BeautifulSoup, Selenium, Node-RED}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
