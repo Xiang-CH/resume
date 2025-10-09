@@ -17,6 +17,7 @@
 
 # Generated PDF files
 *.pdf
+!resume_chen_xiang.pdf
 
 # Temporary files
 *.tmp
