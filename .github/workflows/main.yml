@@ -1,0 +1,27 @@
+name: Upload to Cloudflare R2
+
+on:
+  push:
+    branches:
+      - main  # Run when pushing to the main branch
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Upload to Cloudflare R2
+        uses: ryand56/r2-upload-action@v1.4
+        with:
+          r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
+          r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          r2-bucket: ${{ secrets.R2_BUCKET }}
+          r2-jurisdiction: auto  # or 'standard', 'eu', etc.
+          source-dir: resume_chen_xiang.pdf
+          destination-dir: resume_chen_xiang.pdf
+          keep-file-fresh: true
