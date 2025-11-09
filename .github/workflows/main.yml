@@ -21,7 +21,6 @@ jobs:
           r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
           r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           r2-bucket: ${{ secrets.R2_BUCKET }}
-          r2-jurisdiction: auto  # or 'standard', 'eu', etc.
           source-dir: resume_chen_xiang.pdf
           destination-dir: resume_chen_xiang.pdf
           keep-file-fresh: true
