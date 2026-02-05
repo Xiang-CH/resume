@@ -53,6 +53,7 @@
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
+% \addtolength{\footskip}{-0.9in}
 
 \urlstyle{same}
  
@@ -71,6 +72,7 @@
 % Phone number display control (default: true)
 \providecommand{\showphone}{true}
 \providecommand{\phonenumber}{+852 0000-0000}
+\providecommand{\phonenumbertwo}{+86 000-0000-0000}
 
 %-------------------------
 % Custom commands
@@ -131,9 +133,9 @@
 % \end{tabular*}
 
 \begin{center}
-    \textbf{\Huge \scshape Chen Xiang } \textbf{\huge \scshape 陳想}\\ \vspace{3pt}
+    \textbf{\Huge \scshape Chen Xiang } \textbf{\huge \scshape 陈想}\\ \vspace{3pt}
     \small
-    \ifthenelse{\equal{\showphone}{true}}{\raisebox{-1pt}{\faPhone} \space \phonenumber \space $|$}{}
+    \ifthenelse{\equal{\showphone}{true}}{\raisebox{-1pt}{\faPhone} \space \phonenumber \space $|$ \raisebox{-1pt}{\faPhone} \space \phonenumbertwo \space $|$}{}
     \raisebox{-1pt}{\faEnvelope} \space \href{mailto:xiiang.ch@gmail.com}{\thinunderline{xiiang.ch@gmail.com}} $|$
     \raisebox{-1pt}{\faGlobe} \space \href{https://cxiang.site}{\thinunderline{cxiang.site}} $|$
     \raisebox{-1pt}{\faGithub} \space \href{https://github.com/Xiang-CH}{\thinunderline{github.com/Xiang-CH}}
@@ -147,7 +149,7 @@
       {\href{https://hku.hk/}{The University of Hong Kong}}{Hong Kong}
       {Master of Science in Computer Science}{Sep. 2025 -- Present}
       \resumeItemListStart
-        \resumeItem{Relevant Coursework: Quantum Computing, Data Mining, Algorithmic Trading, Unmanned Systems}
+        \resumeItem{Relevant Coursework: Quantum Computing, Data Mining, Algorithmic Trading, Information Security, Big Data Management}
       \resumeItemListEnd
       \vspace{-5pt}
       \resumeSubSubheading
@@ -169,8 +171,9 @@
       \resumeItemListStart
         \resumeItem{Developing Legal AI tools in collaboration with the Law and Technology Centre, HKU, to support teaching and learning initiatives at HKU Law School.}
         \resumeItem{Processed and structured raw Hong Kong legal documents for context engineering, building a relational semantic database to enable efficient information retrieval in Agentic Retrieval-Augmented Large Language Model legal applications.}
+        \resumeItem{Updating the AI \href{https://ai.hklii.hk/dt-predictor/}{\thinunderline{Sentencing Predictor for Drug Trafficking}} on \href{https://hklii.hk/}{\thinunderline{HKLII}} based on the latest legal developments.}
       \resumeItemListEnd
-      
+
    \resumeSubSubheading
     {Student Research Assistant}{Jun 2023 -- May 2024, Sep 2024 -- Jul 2025}
     \resumeItemListStart
@@ -185,7 +188,7 @@
       \resumeItemListStart
         \resumeItem{Contributed to the agile development of AI English-speaking tutor and AI picture book companion LLM solutions within the education product line.}
         \resumeItem{Developed and maintained application pipelines using \emph{Node-RED} to support customized feature requirements.}
-        \resumeItem{Automated data engineering workflows for model fine-tuning with \emph{Python} scripts and optimized prompt tuning processes using tools such as \emph{promptfoo}.}
+        \resumeItem{Automated data engineering workflows for model fine-tuning with \emph{Python} scripts and optimized prompt tuning processes.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
