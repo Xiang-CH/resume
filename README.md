@@ -15,4 +15,6 @@ Then run the following command to build the resume:
 ```
 
 ## Preview
+https://cdn.cxiang.site/resume_chen_xiang.pdf
+
 ![Resume Preview](resume_chen_xiang.png)

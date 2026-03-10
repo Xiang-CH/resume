@@ -5,6 +5,7 @@
 *.toc
 *.synctex
 *.synctex.gz
+*.synctex_gz
 *.fdb_latexmk
 *.fls
 *.bbl
@@ -17,7 +18,8 @@
 
 # Generated PDF files
 *.pdf
-!resume_chen_xiang.pdf
+!chen_xiang-resume-no-phone.pdf
+!陈想-简历-无电话.pdf
 
 # Temporary files
 *.tmp
