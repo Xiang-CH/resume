@@ -16,8 +16,8 @@ jobs:
 
       - name: Combine Chinese and English versions 
         run: |
-          sudo apt-get update
-          sudo apt-get install pdfunite
+          sudo apt update
+          sudo apt install poppler-utils
           pdfunite chen_xiang-resume-no-phone.pdf 陈想-简历-无电话.pdf resume_chen_xiang.pdf
 
       - name: Upload to Cloudflare R2
