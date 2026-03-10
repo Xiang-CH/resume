@@ -1,0 +1,257 @@
+%! TEX program = xelatex
+%-------------------------
+% Chinese Resume in Latex
+% Author : Chen Xiang
+% Based off of: https://github.com/jakegut/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt,fontset=none]{article}
+
+\usepackage{fontspec}
+\usepackage{xeCJK}
+% \setCJKmainfont{Heiti SC}[
+%   UprightFont = * Light,
+%   BoldFont = * Medium
+% ]
+\setCJKmainfont{Noto Sans SC}[
+  BoldFont = * Medium
+]
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr} 
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xstring}
+\usepackage{ifthen}
+\usepackage{fontawesome5}
+\usepackage[normalem]{ulem} % For customizable underlines
+% \input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+\usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+% \usepackage[sfdefault]{carlito}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\linespread{1.1} 
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+% \addtolength{\footskip}{-0.9in}
+
+\urlstyle{same}
+ 
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+% \pdfgentounicode=1
+
+% Phone number display control (default: true)
+\providecommand{\showphone}{true}
+\providecommand{\phonenumber}{+852 0000-0000}
+\providecommand{\phonenumbertwo}{+86 000-0000-0000}
+
+%-------------------------
+% Custom commands
+
+% Custom thin underline command
+\newcommand{\thinunderline}[1]{\uline{#1}}
+% Adjust underline thickness (0.4pt is thinner than default)
+\renewcommand{\ULthickness}{0.2pt}
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-4pt}}
+  }
+}
+
+% \newcommand{\resumeSubheading}[4]{
+%   \vspace{-2pt}\item
+%     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+%       \textbf{#1} & #2 \\
+%       \textit{\small#3} & \textit{\small #4} \\
+%     \end{tabular*}\vspace{-5pt}
+% }
+
+\newcommand{\resumeSubheading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-9pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & {\footnotesize #2} \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.1in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+	\textbf{\huge \scshape 陈 想}\\ \vspace{3pt}
+	\footnotesize
+	\ifthenelse{\equal{\showphone}{true}}{{\raisebox{-0.5pt}\faPhone} \space \phonenumbertwo \space $|$}{}
+	\raisebox{-1pt}{\faEnvelope} \space \href{mailto:xiiang.ch@gmail.com}{\thinunderline{xiiang.ch@gmail.com}} $|$
+	\raisebox{-1pt}{\faGlobe} \space \href{https://cxiang.site}{\thinunderline{cxiang.site}} $|$
+	\raisebox{-1pt}{\faGithub} \space \href{https://github.com/Xiang-CH}{\thinunderline{github.com/Xiang-CH}} $|$
+  \raisebox{-0.5pt}{\faMapMarker*} \space \scriptsize 上海/香港
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{教育背景}
+\resumeSubHeadingListStart
+\resumeSubheading
+{\href{https://hku.hk/}{香港大学}}{香港}
+\resumeSubSubheading
+{计算机科学理学硕士（研究生）}{2025.09 -- 2026.09 \scriptsize(预计)}
+\resumeItemListStart
+\resumeItem{GPA: 3.50/4.3；相关课程：量子计算、数据挖掘、算法交易、信息安全、大数据管理}
+\resumeItemListEnd
+\vspace{-5pt}
+\resumeSubSubheading
+{计算机科学工学学士（本科）}{2021.09 -- 2025.06}
+\resumeItemListStart
+\resumeItem{GPA: 3.56/4.3，一等荣誉学位，2021-2022 学年院长荣誉名单}
+\resumeItem{相关课程：机器学习、计算机视觉、操作系统、面向对象程序设计、数据科学、软件工程、算法与数据结构、数据库、网络通信、自然语言处理、深度学习}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{实习经历}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{\href{https://www.linkedin.com/school/universityofhongkong}{香港大学}}{香港}
+\resumeSubSubheading
+{研究助理 II}{2025.07 -- 至今}
+\resumeItemListStart
+\resumeItem{针对港大法律与科技中心的需求开发适配教学的法律AI工具，负责工具的研发与落地，包括对香港原始法律文书做结构化改造，并搭建关系型语义数据库，为Agentic RAG大语言模型法律应用提供高效信息检索支撑。}
+\resumeItem{负责维护并持续优化 \href{https://hklii.hk/}{\thinunderline{HKLII}} 平台的 AI \href{https://ai.hklii.hk/dt-predictor/}{\thinunderline{量刑预测器}}，
+利用大模型对判决书进行结构化信息提取并更新量刑计算方法，使系统及时适配香港最新法律条文，保证预测结果与现行法律实践保持一致。\footnotesize (\href{https://github.com/Xiang-CH/hklii-drug-trafficking-sentence-predictor}{\thinunderline{项目仓库}})}
+\resumeItemListEnd
+
+\resumeSubSubheading
+{学生研究助理}{2023.06 -- 2024.05，2024.09 -- 2025.07}
+\resumeItemListStart
+\resumeItem{在香港大学 Innovation Wing 设计并主导多场实践型 AI 工作坊，内容包括基于 Azure AI 服务构建自定义聊天机器人，以及结合版面检测（Layout Detection）的多模态 RAG 文档理解应用开发等。}
+\resumeItem{参与并主导多个跨部门学生 AI 项目，包括 \href{https://clic-search.vercel.app/}{\thinunderline{CLIC-Search}}（社区法治信息中心语义搜索引擎）与多模态历史研究助手。}
+\resumeItemListEnd
+
+\vspace{4pt}
+
+\resumeSubheading
+{\href{https://www.linkedin.com/company/iflytekcoltd.}{科大讯飞}}{深圳}
+\resumeSubSubheading
+{软件开发助理工程师}{2024.06 -- 2024.08}
+\resumeItemListStart
+\resumeItem{参与教育产品线 AI 英语口语私教与 AI 绘本陪读 等 LLM 应用的敏捷开发，使用 \emph{Node-RED} 设计并维护应用工作流；并通过 LoRA 微调优化模型能力，以满足产品的定制化功能需求。}
+\resumeItem{通过 \emph{Python} 脚本自动化模型微调所需的数据工程流程，并对提示词调优流程进行优化以提升效率。}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{项目经历}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{\href{https://clic.cxiang.site/search}{\thinunderline{CLIC-Chats}}} $|$ \emph{Next.js, Prisma, MS-SQL, Azure AI, LLM, RAG}}{2025.07 -- 至今}
+\resumeItemListStart
+\resumeItem{开发面向香港法律内容问答的 全栈 AI Web 应用，使用 \emph{Next.js} 与 \emph{Prisma} 构建系统架构。}
+\resumeItem{解析并清洗香港法律数据源（包括法规、判决书及法律文章），提取结构化信息并构建基于 \emph{MS-SQL} 的关系型数据库。}
+\resumeItem{通过对非结构化法律文本进行语义分块与向量化，在 \emph{Azure AI Search} 上构建 向量 + 关键词（BM25）混合检索索引。}
+\resumeItem{实现基于 RAG 的问答系统，包括查询扩展（Query Expansion）、混合检索、关系信息提取与结果重排序（Reranking），以提升检索相关性并生成更准确的 LLM 回答。}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{\href{https://cucampus.one/}{\thinunderline{CU-Campus}}} $|$ \emph{React Router, Tailwind CSS, Vite, i18n}}{2024.05 -- 2024.10}
+\resumeItemListStart
+\resumeItem{CU Campus 是面向香港中文大学学生的课程评价与课表排期平台，整合多项校园服务并提供一站式信息入口。}
+\resumeItem{参与产品 UX 设计、功能规划及敏捷迭代开发。}
+\resumeItem{基于 \emph{React Router} 实现前端开发，使用 \emph{i18n} 完成三语本地化，并与后端 RESTful API 进行数据交互。}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{更多项目：\href{https://cxiang.site/project}{\textbf{\thinunderline{cxiang.site/project}}}}{}
+\resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{技术栈}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	\small{\item{
+	      \textbf{编程语言}{: TypeScript, JavaScript, Python, SQL, HTML/CSS} \\
+	      \textbf{框架与平台}{: Node.js, Next.js, Tanstack, Flask, FastAPI, Tailwind CSS, Prisma, Chrome 插件, 微信小程序} \\
+	      \textbf{数据库}{: MS-SQL, MongoDB, PostgreSQL, MySQL, ChromaDB} \\
+	      \textbf{开发工具}{: Git, Docker, Linux, Azure, AWS, 阿里云, Postman, Cloudflare, Vercel, Dify, n8n} \\
+	      \textbf{常用库}{: React, Pandas, NumPy, Matplotlib, PyTorch, Scikit-learn, LangChain, BeautifulSoup, Selenium, AI SDK}
+	      }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}
