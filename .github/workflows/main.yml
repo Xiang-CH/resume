@@ -14,17 +14,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Put resumes in a folder
-        run: |
-          mkdir -p resumes
-          mv chen_xiang-resume.pdf resumes/
-          mv 陈想-简历.pdf resumes/
-
       - name: Combine Chinese and English versions 
-        uses: elMuso/MergePDFs-action@1.1
-        with:
-          path: resumes
-          filename: resume_chen_xiang.pdf
+        run: |
+          sudo apt-get update
+          sudo apt-get install pdfunite
+          pdfunite chen_xiang-resume-no-phone.pdf 陈想-简历-无电话.pdf resume_chen_xiang.pdf
 
       - name: Upload to Cloudflare R2
         uses: ryand56/r2-upload-action@v1.4
