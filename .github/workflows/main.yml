@@ -14,6 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Put resumes in a folder
+        run: |
+          mkdir -p resumes
+          mv chen_xiang-resume.pdf resumes/
+          mv 陈想-简历.pdf resumes/
+
+      - name: Combine Chinese and English versions 
+        uses: elMuso/MergePDFs-action@1.1
+        with:
+          path: resumes
+          filename: resume_chen_xiang.pdf
+
       - name: Upload to Cloudflare R2
         uses: ryand56/r2-upload-action@v1.4
         with:
@@ -21,17 +33,6 @@ jobs:
           r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
           r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           r2-bucket: ${{ secrets.R2_BUCKET }}
-          source-dir: chen_xiang-resume-no-phone.pdf
-          destination-dir: ./resume_chen_xiang.pdf
-          keep-file-fresh: true
-
-      - name: Upload to Cloudflare R2 (Chinese version)
-        uses: ryand56/r2-upload-action@v1.4
-        with:
-          r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
-          r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
-          r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          r2-bucket: ${{ secrets.R2_BUCKET }}
-          source-dir: 陈想-简历-无电话.pdf
-          destination-dir: ./resume_chen_xiang_zh.pdf
+          source-dir: resume_chen_xiang.pdf
+          destination-dir: ./
           keep-file-fresh: true
