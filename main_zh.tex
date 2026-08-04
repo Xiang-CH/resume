@@ -14,8 +14,21 @@
 %   UprightFont = * Light,
 %   BoldFont = * Medium
 % ]
-\setCJKmainfont{Noto Sans SC}[
-  BoldFont = * Medium
+\setmainfont{SF Pro Text}[
+  BoldFont = * Bold,
+  FontFace = {l}{n}{*-Regular},
+  FontFace = {sb}{n}{*-Medium}
+]
+\setsansfont{SF Pro Text}[
+  BoldFont = * Bold,
+  FontFace = {l}{n}{*-Regular},
+  FontFace = {sb}{n}{*-Medium}
+]
+\setCJKmainfont{PingFang SC}[
+  BoldFont = * Semibold,
+  UprightFont = * Regular,
+  FontFace = {l}{n}{*-Regular},
+  FontFace = {sb}{n}{*-Medium}
 ]
 
 \usepackage{latexsym}
@@ -39,7 +52,7 @@
 % sans-serif
 % \usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
-\usepackage[sfdefault]{noto-sans}
+% \usepackage[sfdefault]{noto-sans}
 % \usepackage[default]{sourcesanspro}
 % \usepackage[sfdefault]{carlito}
 
@@ -56,12 +69,12 @@
 \linespread{1.1} 
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
 \addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-% \addtolength{\footskip}{-0.9in}
+\addtolength{\textheight}{1.2in}
+% \addtolength{\footskip}{-.9in}
 
 \urlstyle{same}
  
@@ -71,8 +84,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-9pt}\raggedright
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 % \pdfgentounicode=1
@@ -81,6 +94,9 @@
 \providecommand{\showphone}{true}
 \providecommand{\phonenumber}{+852 0000-0000}
 \providecommand{\phonenumbertwo}{+86 000-0000-0000}
+
+\newcommand{\sbseries}{\fontseries{sb}\selectfont}
+\newcommand{\textsb}[1]{{\sbseries #1}}
 
 %-------------------------
 % Custom commands
@@ -91,8 +107,8 @@
 \renewcommand{\ULthickness}{0.2pt}
 
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-4pt}}
+  \item\fontseries{l}\fontsize{10pt}{11.5pt}\selectfont\color[rgb]{0.1,0.1,0.1}{
+    {#1 \vspace{-2pt}}
   }
 }
 
@@ -115,25 +131,25 @@
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & {\footnotesize #2} \\
-    \end{tabular*}\vspace{-8pt}
+      {\small\textsb{#1}} & {\footnotesize #2} \\
+    \end{tabular*}\vspace{-9pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+      \small#1 & {\footnotesize #2} \\
+    \end{tabular*}\vspace{-9pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.1in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in, rightmargin=0.015\textwidth]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-9pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -141,6 +157,7 @@
 
 \begin{document}
 
+% MARK: HEADING
 %----------HEADING----------
 % \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 %   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
@@ -148,7 +165,7 @@
 % \end{tabular*}
 
 \begin{center}
-	\textbf{\huge \scshape 陈 想}\\ \vspace{3pt}
+	\textbf{\huge 陈 想}\\ \vspace{2pt}
 	\footnotesize
 	\ifthenelse{\equal{\showphone}{true}}{{\raisebox{-0.5pt}\faPhone} \space \phonenumbertwo \space $|$}{}
 	\raisebox{-1pt}{\faEnvelope} \space \href{mailto:xiiang.ch@gmail.com}{\thinunderline{xiiang.ch@gmail.com}} $|$
@@ -157,39 +174,51 @@
   \raisebox{-0.5pt}{\faMapMarker*} \space \scriptsize 上海/香港
 \end{center}
 
-
+% MARK: EDUCATION
 %-----------EDUCATION-----------
 \section{教育背景}
 \resumeSubHeadingListStart
 \resumeSubheading
 {\href{https://hku.hk/}{香港大学}}{香港}
 \resumeSubSubheading
-{计算机科学理学硕士（研究生）}{2025.09 -- 2026.09 \scriptsize(预计)}
+{计算机科学理学硕士（研究生）}{2025.09 -- 2026.11 \scriptsize(预计)}
 \resumeItemListStart
-\resumeItem{GPA: 3.50/4.3；相关课程：量子计算、数据挖掘、算法交易、信息安全、大数据管理}
+\resumeItem{GPA: 3.39/4.3；相关课程：量子计算、数据挖掘、算法交易、信息安全、大数据管理、UI/UX 开发}
 \resumeItemListEnd
-\vspace{-5pt}
+\vspace{-3pt}
 \resumeSubSubheading
 {计算机科学工学学士（本科）}{2021.09 -- 2025.06}
 \resumeItemListStart
-\resumeItem{GPA: 3.56/4.3，一等荣誉学位，2021-2022 学年院长荣誉名单}
-\resumeItem{相关课程：机器学习、计算机视觉、操作系统、面向对象程序设计、数据科学、软件工程、算法与数据结构、数据库、网络通信、自然语言处理、深度学习}
+\resumeItem{GPA: 3.56/4.3，一等荣誉学位，院长荣誉名单；相关课程：数据结构、算法、软件工程、数据库、网络通信、操作系统、计算机组成原理、机器学习、计算机视觉、自然语言处理、深度学习、数据科学、面向对象程序设计}
+% \resumeItem{相关课程：机器学习、计算机视觉、操作系统、面向对象程序设计、数据科学、软件工程、算法与数据结构、数据库、网络通信、自然语言处理、深度学习}
 \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-
+% MARK: EXPERIENCE
 %-----------EXPERIENCE-----------
 \section{实习经历}
 \resumeSubHeadingListStart
 
 \resumeSubheading
-{\href{https://www.linkedin.com/school/universityofhongkong}{香港大学}}{香港}
+{\href{https://www.apple.com/}{苹果公司}}{上海}
 \resumeSubSubheading
-{研究助理 II}{2025.07 -- 至今}
+{AI 开发实习生}{2026.05 -- 2026.09}
+\resumeItemListStart
+\resumeItem{主导测试工程师故障监控分析 Agent 插件的设计与交付：完成痛点访谈、架构设计，封装为 Agent SKILL，配套开发 MCP Server、CLI 工具、后台系统，并整合 Human-in-the-Loop 工单系统，支持人工一键创建与关联工单。}
+\resumeItem{针对海量测试数据场景，设计定制 MCP Server 将数据拉取至本地，由脚本完成计算与汇总，全程不将原始数据载入 Agent 上下文，规避大模型在大规模数值计算上的短板；按站点拆分任务，由多个子 Agent 并行处理各自站点的错误信息分析与归因，实现每日自动化报告生成，显著缩短工程师制作报告的时间，助力问题提前发现与解决。}
+\resumeItem{搭建并完善 Skill 仓库的 CI/CD 发布流程，包括 AI PR 检查、自动打包制品发布、一行命令安装及智能体自更新机制。}
+\resumeItemListEnd
+
+\vspace{4pt}
+
+\resumeSubheading
+{\href{https://www.hku.hk/}{香港大学}}{香港}
+\resumeSubSubheading
+{研究助理 (兼职)}{2025.07 -- 至今}
 \resumeItemListStart
 \resumeItem{针对港大法律与科技中心的需求开发适配教学的法律AI工具，负责工具的研发与落地，包括对香港原始法律文书做结构化改造，并搭建关系型语义数据库，为Agentic RAG大语言模型法律应用提供高效信息检索支撑。}
 \resumeItem{负责维护并持续优化 \href{https://hklii.hk/}{\thinunderline{HKLII}} 平台的 AI \href{https://ai.hklii.hk/dt-predictor/}{\thinunderline{量刑预测器}}，
-利用大模型对判决书进行结构化信息提取并更新量刑计算方法，使系统及时适配香港最新法律条文，保证预测结果与现行法律实践保持一致。\footnotesize (\href{https://github.com/Xiang-CH/hklii-drug-trafficking-sentence-predictor}{\thinunderline{项目仓库}})}
+利用大模型对判决书进行结构化信息提取，搭建人工检查平台，并对数据进行分析及预测模型搭建，使系统及时适配香港最新法律条文。\footnotesize (\href{https://github.com/Xiang-CH/hklii-drug-trafficking-sentence-predictor}{\thinunderline{项目仓库}})}
 \resumeItemListEnd
 
 \resumeSubSubheading
@@ -202,7 +231,7 @@
 \vspace{4pt}
 
 \resumeSubheading
-{\href{https://www.linkedin.com/company/iflytekcoltd.}{科大讯飞}}{深圳}
+{\href{https://www.iflytek.com/}{科大讯飞}}{深圳}
 \resumeSubSubheading
 {软件开发助理工程师}{2024.06 -- 2024.08}
 \resumeItemListStart
@@ -212,7 +241,7 @@
 
 \resumeSubHeadingListEnd
 
-
+% MARK: PROJECTS
 %-----------PROJECTS-----------
 \section{项目经历}
 \resumeSubHeadingListStart
@@ -225,13 +254,13 @@
 \resumeItem{实现基于 RAG 的问答系统，包括查询扩展（Query Expansion）、混合检索、关系信息提取与结果重排序（Reranking），以提升检索相关性并生成更准确的 LLM 回答。}
 \resumeItemListEnd
 
-\resumeProjectHeading
-{\textbf{\href{https://cucampus.one/}{\thinunderline{CU-Campus}}} $|$ \emph{React Router, Tailwind CSS, Vite, i18n}}{2024.05 -- 2024.10}
-\resumeItemListStart
-\resumeItem{CU Campus 是面向香港中文大学学生的课程评价与课表排期平台，整合多项校园服务并提供一站式信息入口。}
-\resumeItem{参与产品 UX 设计、功能规划及敏捷迭代开发。}
-\resumeItem{基于 \emph{React Router} 实现前端开发，使用 \emph{i18n} 完成三语本地化，并与后端 RESTful API 进行数据交互。}
-\resumeItemListEnd
+% \resumeProjectHeading
+% {\textbf{\href{https://cucampus.one/}{\thinunderline{CU-Campus}}} $|$ \emph{React Router, Tailwind CSS, Vite, i18n}}{2024.05 -- 2024.10}
+% \resumeItemListStart
+% \resumeItem{CU Campus 是面向香港中文大学学生的课程评价与课表排期平台，整合多项校园服务并提供一站式信息入口。}
+% \resumeItem{参与产品 UX 设计、功能规划及敏捷迭代开发。}
+% \resumeItem{基于 \emph{React Router} 实现前端开发，使用 \emph{i18n} 完成三语本地化，并与后端 RESTful API 进行数据交互。}
+% \resumeItemListEnd
 
 \resumeProjectHeading
 {更多项目：\href{https://cxiang.site/project}{\textbf{\thinunderline{cxiang.site/project}}}}{}
@@ -239,16 +268,16 @@
 
 
 
-%
+% MARK: SKILLS
 %-----------PROGRAMMING SKILLS-----------
 \section{技术栈}
 \begin{itemize}[leftmargin=0.15in, label={}]
-	\small{\item{
+	\fontsize{10pt}{11.5pt}\selectfont\color[rgb]{0.1,0.1,0.1}{\item{
 	      \textbf{编程语言}{: TypeScript, JavaScript, Python, SQL, HTML/CSS} \\
 	      \textbf{框架与平台}{: Node.js, Next.js, Tanstack, Flask, FastAPI, Tailwind CSS, Prisma, Chrome 插件, 微信小程序} \\
 	      \textbf{数据库}{: MS-SQL, MongoDB, PostgreSQL, MySQL, ChromaDB} \\
-	      \textbf{开发工具}{: Git, Docker, Linux, Azure, AWS, 阿里云, Postman, Cloudflare, Vercel, Dify, n8n} \\
-	      \textbf{常用库}{: React, Pandas, NumPy, Matplotlib, PyTorch, Scikit-learn, LangChain, BeautifulSoup, Selenium, AI SDK}
+	      \textbf{开发工具}{: Git, Docker, Linux, Azure, AWS, 阿里云, Postman, Cloudflare, Vercel, Dify, n8n, Codex} \\
+	      \textbf{常用库}{: React, Pandas, NumPy, Matplotlib, PyTorch, Scikit-learn, LangChain, Selenium, Vercel AI SDK}
 	      }}
 \end{itemize}
 
