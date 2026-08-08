@@ -6,7 +6,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[letterpaper,11pt,fontset=none]{article}
+\documentclass[a4paper,11pt]{article}
 
 \usepackage{fontspec}
 \usepackage{xeCJK}
@@ -16,12 +16,12 @@
 % ]
 \setmainfont{SF Pro Text}[
   BoldFont = * Bold,
-  FontFace = {l}{n}{*-Regular},
+  FontFace = {l}{n}{*-Light},
   FontFace = {sb}{n}{*-Medium}
 ]
 \setsansfont{SF Pro Text}[
   BoldFont = * Bold,
-  FontFace = {l}{n}{*-Regular},
+  FontFace = {l}{n}{*-Light},
   FontFace = {sb}{n}{*-Medium}
 ]
 \setCJKmainfont{PingFang SC}[
@@ -66,7 +66,7 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-\linespread{1.1} 
+\linespread{1.2}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.55in}
@@ -84,7 +84,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-9pt}\raggedright
+  \bfseries\vspace{-9pt}\raggedright
 }{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -93,7 +93,7 @@
 % Phone number display control (default: true)
 \providecommand{\showphone}{true}
 \providecommand{\phonenumber}{+852 0000-0000}
-\providecommand{\phonenumbertwo}{+86 000-0000-0000}
+\providecommand{\phonenumbertwo}{}
 
 \newcommand{\sbseries}{\fontseries{sb}\selectfont}
 \newcommand{\textsb}[1]{{\sbseries #1}}
@@ -107,8 +107,8 @@
 \renewcommand{\ULthickness}{0.2pt}
 
 \newcommand{\resumeItem}[1]{
-  \item\fontseries{l}\fontsize{10pt}{11.5pt}\selectfont\color[rgb]{0.1,0.1,0.1}{
-    {#1 \vspace{-2pt}}
+  \item\fontseries{l}\fontsize{10pt}{12pt}\selectfont{
+    {#1 \vspace{-4pt}}
   }
 }
 
@@ -120,26 +120,33 @@
 %     \end{tabular*}\vspace{-5pt}
 % }
 
-\newcommand{\resumeSubheading}[2]{
+\newcommand{\resumeSubheading}[1]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
+      \textbf{#1} & \\
     \end{tabular*}\vspace{-9pt}
+}
+
+\newcommand{\resumeExperienceHeading}[3]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1}\hspace{1em}\small\textsb{#2} & {\footnotesize\textsb{#3}} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      {\small\textsb{#1}} & {\footnotesize #2} \\
+      {\small\textsb{#1}} & {\footnotesize\textsb{#2}} \\
     \end{tabular*}\vspace{-9pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & {\footnotesize #2} \\
-    \end{tabular*}\vspace{-9pt}
+      \small#1 & {\footnotesize\textsb{#2}} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}}
@@ -174,23 +181,32 @@
   \raisebox{-0.5pt}{\faMapMarker*} \space \scriptsize 上海/香港
 \end{center}
 
+% MARK: PROFILE
+%-----------PROFILE-----------
+\section{个人简介}
+\resumeSubHeadingListStart
+\item{\fontseries{l}\fontsize{10pt}{12pt}\selectfont{
+求职方向：AI 应用、LLM 工程与全栈开发。专注 Agent、RAG、MCP 等 LLM 应用工程，最熟悉 Python、TypeScript，具备数据处理、全栈开发、数据库、云平台部署与 CI/CD 的完整项目经验，熟练 Git 协作开发与 AI 辅助开发工作流，并有开源项目贡献。
+}}
+\resumeSubHeadingListEnd
+\vspace{-16pt}
 % MARK: EDUCATION
 %-----------EDUCATION-----------
 \section{教育背景}
 \resumeSubHeadingListStart
 \resumeSubheading
-{\href{https://hku.hk/}{香港大学}}{香港}
+{\href{https://hku.hk/}{香港大学}}
 \resumeSubSubheading
-{计算机科学理学硕士（研究生）}{2025.09 -- 2026.11 \scriptsize(预计)}
+{计算机科学理学硕士（研究生）}{2025/09 -- 2026/11 (预计)}
 \resumeItemListStart
-\resumeItem{GPA: 3.39/4.3；相关课程：量子计算、数据挖掘、算法交易、信息安全、大数据管理、UI/UX 开发}
+\resumeItem{GPA：3.39/4.3；相关课程：量子计算、数据挖掘、信息安全、大数据管理}
 \resumeItemListEnd
 \vspace{-3pt}
 \resumeSubSubheading
-{计算机科学工学学士（本科）}{2021.09 -- 2025.06}
+{计算机科学工学学士（本科）}{2021/09 -- 2025/06}
 \resumeItemListStart
-\resumeItem{GPA: 3.56/4.3，一等荣誉学位，院长荣誉名单；相关课程：数据结构、算法、软件工程、数据库、网络通信、操作系统、计算机组成原理、机器学习、计算机视觉、自然语言处理、深度学习、数据科学、面向对象程序设计}
-% \resumeItem{相关课程：机器学习、计算机视觉、操作系统、面向对象程序设计、数据科学、软件工程、算法与数据结构、数据库、网络通信、自然语言处理、深度学习}
+\resumeItem{GPA：3.56/4.3；一等荣誉学位、院长荣誉名单}
+\resumeItem{相关课程：数据结构、算法、软件工程、数据库、机器学习、深度学习、自然语言处理}
 \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -199,44 +215,37 @@
 \section{实习经历}
 \resumeSubHeadingListStart
 
-\resumeSubheading
-{\href{https://www.apple.com/}{苹果公司}}{上海}
-\resumeSubSubheading
-{AI 开发实习生}{2026.05 -- 2026.09}
+\resumeExperienceHeading
+ {\href{https://www.apple.com/}{苹果公司}}{AI 开发实习生}{2026/05 -- 2026/09 (预计)}
 \resumeItemListStart
-\resumeItem{主导测试工程师故障监控分析 Agent 插件的设计与交付：完成痛点访谈、架构设计，封装为 Agent SKILL，配套开发 MCP Server、CLI 工具、后台系统，并整合 Human-in-the-Loop 工单系统，支持人工一键创建与关联工单。}
-\resumeItem{针对海量测试数据场景，设计定制 MCP Server 将数据拉取至本地，由脚本完成计算与汇总，全程不将原始数据载入 Agent 上下文，规避大模型在大规模数值计算上的短板；按站点拆分任务，由多个子 Agent 并行处理各自站点的错误信息分析与归因，实现每日自动化报告生成，显著缩短工程师制作报告的时间，助力问题提前发现与解决。}
-\resumeItem{搭建并完善 Skill 仓库的 CI/CD 发布流程，包括 AI PR 检查、自动打包制品发布、一行命令安装及智能体自更新机制。}
+\resumeItem{主导测试工程师故障监控分析 Agent 插件从需求访谈、架构设计到交付，封装为 Agent Skill；配套开发 MCP Server、CLI 工具和后台系统，并整合 Human-in-the-Loop 工单流程，支持人工创建与关联工单。}
+\resumeItem{针对 iPhone 产线验证阶段 MB 级测试数据，设计定制 MCP Server：将原本多步骤、易出错的数据拉取流程封装为单一 Tool 调用，提升流程成功率，同时数据本地化处理避免原始数据进入 Agent 上下文；结合多子 Agent 按站点并行完成错误归因分析，日报生成周期由数天压缩至一小时左右。}
+\resumeItem{搭建 Skill 仓库的 CI/CD 发布流程，包括 AI PR 检查、自动打包制品发布、一行命令安装及智能体自更新机制。}
 \resumeItemListEnd
 
 \vspace{4pt}
 
-\resumeSubheading
-{\href{https://www.hku.hk/}{香港大学}}{香港}
-\resumeSubSubheading
-{研究助理 (兼职)}{2025.07 -- 至今}
+\resumeExperienceHeading
+ {\href{https://www.hku.hk/}{香港大学}}{研究助理（兼职）}{2025/07 -- 至今}
 \resumeItemListStart
-\resumeItem{针对港大法律与科技中心的需求开发适配教学的法律AI工具，负责工具的研发与落地，包括对香港原始法律文书做结构化改造，并搭建关系型语义数据库，为Agentic RAG大语言模型法律应用提供高效信息检索支撑。}
-\resumeItem{负责维护并持续优化 \href{https://hklii.hk/}{\thinunderline{HKLII}} 平台的 AI \href{https://ai.hklii.hk/dt-predictor/}{\thinunderline{量刑预测器}}，
-利用大模型对判决书进行结构化信息提取，搭建人工检查平台，并对数据进行分析及预测模型搭建，使系统及时适配香港最新法律条文。\footnotesize (\href{https://github.com/Xiang-CH/hklii-drug-trafficking-sentence-predictor}{\thinunderline{项目仓库}})}
+\resumeItem{面向香港大学法学院教学场景设计法律 AI 工具，并为港大法律与科技中心开发、维护 AI 法律研究平台。}
+\resumeItem{维护并优化{ } \href{https://hklii.hk/}{\thinunderline{HKLII}} 平台的 AI \href{https://ai.hklii.hk/dt-predictor/}{\thinunderline{量刑预测器}}：利用大模型对超过 2,000 份判决书进行结构化信息提取并完成全量人工审核，搭建供超过 40 名法律学生使用的人工检查平台，并基于结构化数据开展统计分析与预测模型构建；模型预测误差不超过 8 个月，并持续适配香港最新法律条文。\footnotesize (\href{https://github.com/Xiang-CH/hklii-drug-trafficking-sentence-predictor}{\thinunderline{项目仓库}})}
 \resumeItemListEnd
 
 \resumeSubSubheading
-{学生研究助理}{2023.06 -- 2024.05，2024.09 -- 2025.07}
+{学生研究助理}{2023/06 -- 2024/05，2024/09 -- 2025/07}
 \resumeItemListStart
-\resumeItem{在香港大学 Innovation Wing 设计并主导多场实践型 AI 工作坊，内容包括基于 Azure AI 服务构建自定义聊天机器人，以及结合版面检测（Layout Detection）的多模态 RAG 文档理解应用开发等。}
-\resumeItem{参与并主导多个跨部门学生 AI 项目，包括 \href{https://clic-search.vercel.app/}{\thinunderline{CLIC-Search}}（社区法治信息中心语义搜索引擎）与多模态历史研究助手。}
+\resumeItem{在香港大学创客空间设计并主导多个实践型 AI 工作坊，涵盖基于 Azure AI 服务构建聊天机器人，以及结合版面检测（Layout Detection）的多模态 RAG 文档理解应用。}
+\resumeItem{参与跨部门学生 AI 项目，包括 { }\href{https://clic-search.vercel.app/}{\thinunderline{CLIC-Search}}（社区法治信息中心语义搜索引擎）与多模态历史研究助手。}
 \resumeItemListEnd
 
 \vspace{4pt}
 
-\resumeSubheading
-{\href{https://www.iflytek.com/}{科大讯飞}}{深圳}
-\resumeSubSubheading
-{软件开发助理工程师}{2024.06 -- 2024.08}
+\resumeExperienceHeading
+ {\href{https://www.iflytek.com/}{科大讯飞}}{软件开发助理工程师}{2024/06 -- 2024/08}
 \resumeItemListStart
-\resumeItem{参与教育产品线 AI 英语口语私教与 AI 绘本陪读 等 LLM 应用的敏捷开发，使用 \emph{Node-RED} 设计并维护应用工作流；并通过 LoRA 微调优化模型能力，以满足产品的定制化功能需求。}
-\resumeItem{通过 \emph{Python} 脚本自动化模型微调所需的数据工程流程，并对提示词调优流程进行优化以提升效率。}
+\resumeItem{参与教育产品线 AI 英语口语私教与 AI 绘本陪读等 LLM 应用的敏捷开发，使用 \emph{Node-RED} 设计并维护应用工作流; 使用 Python 自动化模型微调的数据工程流程，并通过 LoRA 微调适配产品功能需求。}
+\resumeItem{搭建并改造基于 LLM-as-a-Judge 的评测流程，辅助筛选和分析 bad case（失败样例），定位问题类型并迭代 Prompt，完善从 bad case 发现、归因到 Prompt 优化的闭环。}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -246,21 +255,20 @@
 \section{项目经历}
 \resumeSubHeadingListStart
 \resumeProjectHeading
-{\textbf{\href{https://clic.cxiang.site/search}{\thinunderline{CLIC-Chat}}} $|$ \emph{Next.js, Prisma, MS-SQL, Azure AI, LLM, RAG}}{2025.07 -- 至今}
+ {\textbf{\href{https://clic.cxiang.site/search}{\thinunderline{CLIC-Chat}}}}{} 
 \resumeItemListStart
-\resumeItem{开发面向香港法律内容问答的 全栈 AI Web 应用，使用 \emph{Next.js} 与 \emph{Prisma} 构建系统架构。}
-\resumeItem{解析并清洗香港法律数据源（包括法规、判决书及法律文章），提取结构化信息并构建基于 \emph{MS-SQL} 的关系型数据库。}
-\resumeItem{通过对非结构化法律文本进行语义分块与向量化，在 \emph{Azure AI Search} 上构建 向量 + 关键词（BM25）混合检索索引。}
-\resumeItem{实现基于 RAG 的问答系统，包括查询扩展（Query Expansion）、混合检索、关系信息提取与结果重排序（Reranking），以提升检索相关性并生成更准确的 LLM 回答。}
+\resumeItem{开发面向香港法律内容问答的全栈 AI Web 应用，使用 \emph{Next.js} 与 \emph{Prisma} 构建系统架构。}
+\resumeItem{解析并清洗香港法律数据源（包括法规、判决书及法律文章），提取结构化信息并构建关系型数据库。}
+\resumeItem{对非结构化法律文本进行语义分块与向量化，在 \emph{Azure AI Search} 上构建向量 + 关键词（BM25）混合检索索引。}
+\resumeItem{实现基于 RAG 的问答系统，包括查询扩展（Query Expansion）、混合检索、关系信息提取与结果重排序（Reranking），形成从数据处理、检索到生成的完整链路。}
 \resumeItemListEnd
 
-% \resumeProjectHeading
-% {\textbf{\href{https://cucampus.one/}{\thinunderline{CU-Campus}}} $|$ \emph{React Router, Tailwind CSS, Vite, i18n}}{2024.05 -- 2024.10}
-% \resumeItemListStart
-% \resumeItem{CU Campus 是面向香港中文大学学生的课程评价与课表排期平台，整合多项校园服务并提供一站式信息入口。}
-% \resumeItem{参与产品 UX 设计、功能规划及敏捷迭代开发。}
-% \resumeItem{基于 \emph{React Router} 实现前端开发，使用 \emph{i18n} 完成三语本地化，并与后端 RESTful API 进行数据交互。}
-% \resumeItemListEnd
+\resumeProjectHeading
+{\textbf{\href{https://github.com/Xiang-CH/zhipu-ai-provider}{\thinunderline{zhipu-ai-provider}}}}{}
+\resumeItemListStart
+\resumeItem{开源并维护为智谱（Z.ai）GLM 系列模型开发的 Vercel AI SDK 适配器，支持文本生成、流式输出、工具调用、多模态、推理及 Embedding/图像生成能力。}
+\resumeItem{项目发布至 npm，\href{https://npm-stat.com/charts.html?package=zhipu-ai-provider&from=2025-03-01}{\thinunderline{下载量}}超 23 万次，被广泛应用于 Typescript 生态的 AI 项目中。}
+\resumeItemListEnd
 
 \resumeProjectHeading
 {更多项目：\href{https://cxiang.site/project}{\textbf{\thinunderline{cxiang.site/project}}}}{}
@@ -272,12 +280,13 @@
 %-----------PROGRAMMING SKILLS-----------
 \section{技术栈}
 \begin{itemize}[leftmargin=0.15in, label={}]
-	\fontsize{10pt}{11.5pt}\selectfont\color[rgb]{0.1,0.1,0.1}{\item{
+\fontsize{10pt}{12pt}\selectfont{\item{
+      \textbf{AI / LLM}{: RAG, Agent, MCP, LLM-as-a-Judge, Prompt Engineering, LoRA, LangChain, Azure AI Search, Vercel AI SDK, OpenAI API, Dify, n8n} \\
 	      \textbf{编程语言}{: TypeScript, JavaScript, Python, SQL, HTML/CSS} \\
-	      \textbf{框架与平台}{: Node.js, Next.js, Tanstack, Flask, FastAPI, Tailwind CSS, Prisma, Chrome 插件, 微信小程序} \\
+	      \textbf{框架与平台}{: Node.js, Next.js, React, Vue.js, TanStack, Flask, FastAPI, Tailwind CSS, Prisma, Chrome 扩展} \\
 	      \textbf{数据库}{: MS-SQL, MongoDB, PostgreSQL, MySQL, ChromaDB} \\
-	      \textbf{开发工具}{: Git, Docker, Linux, Azure, AWS, 阿里云, Postman, Cloudflare, Vercel, Dify, n8n, Codex} \\
-	      \textbf{常用库}{: React, Pandas, NumPy, Matplotlib, PyTorch, Scikit-learn, LangChain, Selenium, Vercel AI SDK}
+      \textbf{工具与部署}{: Git, GitHub, Docker, Linux, Azure, AWS, 阿里云, Cloudflare, Vercel, Postman, Node-RED, Clerk} \\
+	      \textbf{常用库}{: Pandas, NumPy, Matplotlib, PyTorch, Scikit-learn, BeautifulSoup, Selenium}
 	      }}
 \end{itemize}
 
