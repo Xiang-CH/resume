@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "cn-resume-optimizer": {
+      "source": "wufeihalf/cn-resume-optimizer",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "9163d90e7de19bd68e7b046d47b47c660147a66aecf9f943db52553e3be054fc"
+    }
+  }
+}
