@@ -5,3 +5,4 @@ xelatex -jobname 陈想-简历 "\def\phonenumbertwo{${PHONE_NUMBER_TWO}}\input{m
 xelatex -jobname chen_xiang-resume-no-phone "\def\showphone{false}\input{main.tex}"
 xelatex -jobname 陈想-简历-无电话 "\def\showphone{false}\input{main_zh.tex}"
 rm *.aux *.log *.out
+bash generate_markdown.sh

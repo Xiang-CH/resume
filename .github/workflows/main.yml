@@ -14,11 +14,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Combine Chinese and English versions 
+      - name: Install dependencies
         run: |
           sudo apt update
-          sudo apt install poppler-utils
-          pdfunite chen_xiang-resume-no-phone.pdf 陈想-简历-无电话.pdf resume_chen_xiang.pdf
+          sudo apt install -y poppler-utils pandoc
+
+      - name: Combine Chinese and English versions
+        run: |
+          mkdir -p deploy
+          pdfunite chen_xiang-resume-no-phone.pdf 陈想-简历-无电话.pdf deploy/resume_chen_xiang.pdf
+
+      - name: Render preview image
+        run: |
+          pdftoppm -png -r 210 -f 1 -l 1 -singlefile deploy/resume_chen_xiang.pdf deploy/resume_chen_xiang
+
+      - name: Generate Markdown versions
+        run: bash generate_markdown.sh
+
+      - name: Stage Markdown for upload
+        run: |
+          cp resume_chen_xiang.md 陈想-简历.md deploy/
 
       - name: Upload to Cloudflare R2
         uses: ryand56/r2-upload-action@v1.4
@@ -27,6 +42,6 @@ jobs:
           r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
           r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           r2-bucket: ${{ secrets.R2_BUCKET }}
-          source-dir: resume_chen_xiang.pdf
+          source-dir: deploy/
           destination-dir: ./
           keep-file-fresh: true

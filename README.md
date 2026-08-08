@@ -4,6 +4,12 @@ This is the repository for my resume. It is built using LaTeX based on [Jake Gut
 
 It uses XeLaTeX with xeCJK to support Chinese characters. It builds two versions of the resume: one with phone number and one without (for public websites).
 
+## Resume Files
+- [English Resume (PDF)](chen_xiang-resume-no-phone.pdf)
+- [中文简历 (PDF)](陈想-简历-无电话.pdf)
+- [English Resume (Markdown)](resume_chen_xiang.md)
+- [中文简历 (Markdown)](陈想-简历.md)
+
 ## Build
 First create a `.env` file in the root directory and add your phone number:
 ```bash
@@ -17,4 +23,4 @@ Then run the following command to build the resume:
 ## Preview
 https://cdn.cxiang.site/resume_chen_xiang.pdf
 
-![Resume Preview](resume_chen_xiang.png)
+![Resume Preview](https://cdn.cxiang.site/resume_chen_xiang.png)
