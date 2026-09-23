@@ -1,14 +1,14 @@
 # Chen Xiang 陈想
 [<u>xiiang.ch@gmail.com</u>](mailto:xiiang.ch@gmail.com) | [<u>cxiang.site</u>](https://cxiang.site) | [<u>github.com/Xiang-CH</u>](https://github.com/Xiang-CH)
 
-## Profile
+## About
 
-- Seeking roles in AI applications, LLM engineering, and full-stack development. Specialized in LLM application engineering including Agents, RAG, and MCP; most proficient in Python and TypeScript, with end-to-end project experience in data processing, full-stack development, databases, cloud deployment, and CI/CD. Proficient in Git-based collaboration and AI-assisted development workflows, with open-source contributions.
+- AI engineer focused on LLM applications, including Agents, RAG, and MCP. Skilled in Python and TypeScript across full-stack development, cloud deployment, and CI/CD, with open-source contributions.
 
 ## Education
 
 - **[The University of Hong Kong](https://hku.hk/)** | Hong Kong  
-  *Master of Science in Computer Science* | *Sep. 2025 – Nov. 2026 (Expected)*
+  *Master of Science in Computer Science* | *Sep. 2025 – Nov. 2026*
   - GPA: 3.39/4.3; Relevant Coursework: Quantum Computing, Data Mining, Information Security, Big Data Management
 - *Bachelor of Engineering in Computer Science* | *Sep. 2021 – Jun. 2025*
   - GPA: 3.56/4.3; First Class Honours, Dean’s Honours List
@@ -16,15 +16,15 @@
 
 ## Experience
 
-- **[Apple Inc.](https://www.apple.com/)**  
-  *AI Development Intern* | *May 2026 – Sep. 2026 (Expected)*
-  - Led the delivery of a fault-monitoring and analysis Agent plugin for test engineers from requirements interviews and architecture design to deployment, packaging it as an Agent Skill; built a companion MCP Server, CLI tool, and backend system, and integrated a Human-in-the-Loop ticketing workflow supporting manual ticket creation and linking.
-  - Designed a custom MCP Server for MB-level test data from the iPhone production line validation phase, encapsulating the original multi-step, error-prone data fetching process into a single tool call to improve success rate, while processing data locally to keep raw data out of the Agent context; combined multiple sub-agents running site-parallel error attribution analysis, compressing the daily report generation cycle from several days to about one hour.
+- **[Apple Inc.](https://www.apple.com/)** | Shanghai  
+  *AI Development Intern* | *May 2026 – Sep. 2026*
+  - Led the delivery of a fault-monitoring and analysis Agent plugin for test engineers from requirements interviews and architecture design to deployment, packaging it as an Agent Skill; built a companion MCP Server, CLI tool, and PostgreSQL backend system, and integrated a Human-in-the-Loop ticketing workflow supporting manual ticket creation and linking.
+  - Designed a custom MCP Server for MB-scale test data from the iPhone production line validation phase, encapsulating the original multi-step, error-prone data fetching process into a single tool call to improve success rate, while processing data locally to keep raw data out of the Agent context; combined multiple sub-agents running site-parallel error attribution analysis, compressing the daily report generation cycle from several days to about one hour.
   - Set up the CI/CD release pipeline for the Skill repository, including AI-powered PR review, automated artifact packaging and release, one-line-command installation, and an agent self-update mechanism.
 - **[The University of Hong Kong](https://www.hku.hk/)** | Hong Kong  
-  *Research Assistant* | *Jul 2025 – Present*
+  *Research Assistant (Part-time)* | *Jul 2025 – Present*
   - Designing legal AI tools for HKU Law School teaching scenarios and developing and maintaining the AI legal research platform for the Law and Technology Centre.
-  - Maintaining and optimizing the AI [<u>Sentencing Predictor</u>](https://ai.hklii.hk/dt-predictor/) on [<u>HKLII</u>](https://hklii.hk/): using LLMs to extract structured information from over 2,000 judgments with full manual review, building a review platform used by over 40 law students, and conducting statistical analysis and predictive modeling on the structured data; the model’s prediction error is within 8 months, with continuous adaptation to the latest Hong Kong legislation. ([<u>project repository</u>](https://github.com/Xiang-CH/hklii-drug-trafficking-sentence-predictor))
+  - Maintaining and optimizing the AI [<u>Sentencing Predictor</u>](https://ai.hklii.hk/dt-predictor/) on [<u>HKLII</u>](https://hklii.hk/): using LLMs to extract structured information from over 2,000 judgments with full manual review, building a review platform used by over 40 law students, and conducting statistical analysis and predictive modeling on the structured data; the model’s median prediction error is within 3 months, with continuous adaptation to the latest Hong Kong legislation.
 - *Student Research Assistant* | *Jun 2023 – May 2024, Sep 2024 – Jul 2025*
   - Designed and led multiple hands-on AI workshops at the HKU Makerspace (Innovation Wing), covering building chatbots with Azure AI services and developing multi-modal Retrieval-Augmented Generation (RAG) applications with layout detection for document understanding.
   - Participated in cross-departmental student AI projects, including [<u>CLIC-Search</u>](https://clic-search.vercel.app/): a semantic search engine for the Community Legal Information Centre, and a multi-modal history research assistant.
@@ -49,7 +49,7 @@
 
 **AI / LLM**: RAG, Agent, MCP, LLM-as-a-Judge, Prompt Engineering, LoRA, LangChain, Azure AI Search, Vercel AI SDK, OpenAI API, Dify, n8n  
 **Languages**: TypeScript, JavaScript, Python, SQL, HTML/CSS  
-**Frameworks**: Node.js, Next.js, React, Vue.js, TanStack, Flask, FastAPI, Tailwind CSS, Prisma, Chrome Extensions  
+**Frameworks and Platforms**: Node.js, Next.js, React, Vue.js, TanStack, Flask, FastAPI, Tailwind CSS, Prisma, Chrome Extensions  
 **Databases**: MS-SQL, MongoDB, PostgreSQL, MySQL, ChromaDB  
 **Tools and Deployment**: Git, GitHub, Docker, Linux, Azure, AWS, Alibaba Cloud, Cloudflare, Vercel, Postman, Node-RED, Clerk  
 **Libraries**: Pandas, NumPy, Matplotlib, PyTorch, Scikit-learn, BeautifulSoup, Selenium
